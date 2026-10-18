@@ -166,3 +166,25 @@ if (menuToggle && navLinks) {
 // Restore saved language
 const savedLanguage = localStorage.getItem("engz-language");
 setLanguage(savedLanguage === "ar" ? "ar" : "en");
+
+
+
+
+
+
+const formToggle = document.getElementById("formToggle");
+const formPanel = document.getElementById("googleFormPanel");
+const formClose = document.getElementById("formClose");
+
+formToggle.addEventListener("click", () => {
+  formPanel.hidden = false;
+  formToggle.setAttribute("aria-expanded", "true");
+  formToggle.hidden = true;
+});
+
+formClose.addEventListener("click", () => {
+  formPanel.hidden = true;
+  formToggle.hidden = false;
+  formToggle.setAttribute("aria-expanded", "false");
+  formToggle.focus();
+});
